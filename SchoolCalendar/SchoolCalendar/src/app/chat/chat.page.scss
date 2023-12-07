@@ -1,0 +1,57 @@
+ion-content {
+    --ion-safe-area-top: 0;
+    --ion-safe-area-bottom: 0;
+  }
+  
+  ion-list.chat-list {
+    height: calc(100% - 58px); /* Subtracting the height of the footer */
+    overflow-y: auto;
+  }
+  ion-card.outgoing {
+    align-self: flex-start;
+    background-color: #1F8AFF;
+    color: white;
+  }
+  ion-card.incoming {
+    align-self: flex-start;
+    color: white;
+  }
+  ion-item {
+    padding: 8px;
+    margin-bottom: 4px;
+    max-width: 80%;
+    border-radius: 8px;
+  }
+  
+  ion-item.incoming {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+  }
+  
+  ion-item.outgoing {
+    align-self: flex-end;
+    background-color: rgb(178, 216, 242);
+  }
+  
+  ion-label.message-text {
+    font-size: 14px;
+  }
+  
+  ion-footer {
+    --ion-background-color: #4285f4; /* Change this to the desired blue color */
+    position: absolute;
+    // bottom: 0;
+    width: 100%;
+    // padding: 8px;
+    margin-top: 20px;
+  }
+  
+  ion-input {
+    flex: 1;
+    margin-right: 8px;
+  }
+  
+  ion-button {
+    width: 100%; /* Adjust the width as needed */
+  }
+  

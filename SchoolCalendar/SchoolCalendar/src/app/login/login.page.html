@@ -1,0 +1,30 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@200&family=Raleway:wght@100&display=swap');
+</style>
+
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row justify-content-center align-items-center style="height: 100%;">
+      <ion-col size-md="6" size-lg="4" size-xl="3">
+        <ion-card style="text-align: center;">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Welcome!</ion-card-title>
+
+            <img src="assets/media/lc-blue.png" alt="Welcome Image" style="width: 200px;height: 150px;" />
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="loginWithGoogle()" expand="full" color="secondary">
+              <ion-icon name="logo-google"></ion-icon>
+              Login with Google
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

@@ -1,0 +1,52 @@
+<!-- landing.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button name="custom-menu-icon">
+        <ion-img src="/assets/media/menu.svg" alt="_" style="width: 50px;"></ion-img>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="/assets/media/lc-blue.png" alt="_" style="width: 60px; margin-left:90px;"></ion-img>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <ion-card class="landing-card">
+    <ion-card-header>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <div class="user-info">
+              <img
+                style="border-radius: 50px;"
+                *ngIf="userImageUrl"
+                [src]="userImageUrl"
+                alt="User Profile Picture"
+                class="profile-picture"
+              />
+              <ion-card-title style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;" *ngIf="userName" class="welcome-message">
+                <span style="font-weight: 900; font-size: 1.7rem;">{{ userName }} {{ userFamilyName }}</span>
+              </ion-card-title>
+              <p *ngIf="userEmail">Email: {{ userEmail }}</p>
+              <!-- <p *ngIf="userFamilyName">Last Name: {{ userFamilyName }}</p> -->
+              <!-- <p *ngIf="userId">User ID: {{ userId }}</p> -->
+            </div>
+            <!-- <p>Profile Options Coming Soon!</p>
+            <p>W App?</p>
+            <ion-toggle>Default Toggle</ion-toggle><br /><br /> -->
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-img src="/assets/media/profile.gif" alt="App Image"></ion-img>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,47 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@200&family=Raleway:wght@100&display=swap');
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel&family=Josefin+Sans:wght@200&family=Raleway:wght@100&display=swap');
+</style>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button name="custom-menu-icon">
+        <ion-img src="/assets/media/menu.svg" alt="_" style="width: 50px;"></ion-img>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="/assets/media/lc-blue.png" alt="_" style="width: 60px; margin-left:90px;"></ion-img>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+<ion-content>
+   <ion-card class="landing-card" style="border-top-right-radius: 50px; border-bottom-left-radius: 50px;">
+    <ion-card-header>
+      <div class="user-info">
+        <!-- <img style="border-radius: 50px;" *ngIf="userImageUrl" [src]="userImageUrl" alt="User Profile Picture" class="profile-picture"> -->
+        <ion-card-title style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;" *ngIf="userName" class="welcome-message">
+          Welcome Back, <span style="font-weight: 900; font-size: 1.7rem;">{{ userName }}!</span>
+        </ion-card-title>
+      </div>
+    </ion-card-header>
+
+    <ion-img src="/assets/media/Calendar.gif" alt="App Image">
+    </ion-img>
+
+    <ion-card-content>
+      <ion-card-title>LC State Calendar App</ion-card-title>
+      <p>Explore calendars, discover events, and create your own schedule.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Include the storyset gif here -->
+</ion-content>

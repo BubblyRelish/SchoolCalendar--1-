@@ -1,0 +1,44 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@200&family=Raleway:wght@100&display=swap');
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+</style>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button name="custom-menu-icon">
+        <ion-img src="/assets/media/menu.svg" alt="_" style="width: 50px;"></ion-img>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-img src="/assets/media/lc-blue.png" alt="_" style="width: 60px; margin-left:90px;"></ion-img>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list lines="none">
+    <div *ngFor="let date of dateList">
+      <h4>{{ date }}</h4>
+      <div *ngFor="let event of eventList">
+        <app-event *ngIf="date === event.startDateString" [event]="event"></app-event>
+      </div>
+    </div>
+    <ion-item *ngIf="!eventList.length && !calService.noCalendarsChecked()">No events to display!</ion-item>
+    <ion-item *ngIf="calService.noCalendarsChecked()">No calendars selected! Select calendars from the menu on the
+      left.</ion-item>
+  </ion-list>
+  <div class="centerButton" *ngIf="moreEventsButtonShown">
+    <ion-button shape="round" class="moreEventsButton" (click)="loadMoreEvents()"
+      [disabled]="moreEventsButtonDisabled" expand="block">Load More Events</ion-button>
+  </div>
+</ion-content>
